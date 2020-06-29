@@ -1,0 +1,33 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "simple fullstack app",
+  "main": "index.js",
+  "scripts":
+  {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SGRashid/vue-rest-api.git"
+  },
+  "keywords": [
+    "rest-api",
+    "vue",
+    "fullstack",
+    "node.js"
+  ],
+  "author": "Sergei Gabdullin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SGRashid/vue-rest-api/issues"
+  },
+  "homepage": "https://github.com/SGRashid/vue-rest-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
