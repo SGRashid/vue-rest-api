@@ -31,8 +31,8 @@
         <div class="card-body">
             <h5 class="card-title">{{contact.name}}</h5>
             <p class="card-text">{{contact.value}}</p>
-            <button class="btn btn-primary">Отметить</button>
-            <button class="btn btn-danger">Удалить</button>
+            <button class="btn btn-primary" @click="markContact(contact.id)">Отметить</button>
+            <button class="btn btn-danger" @click="removeContact(contact.id)">Удалить</button>
         </div>
     </div>
     </div>

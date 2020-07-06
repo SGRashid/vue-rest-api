@@ -15,9 +15,14 @@ new Vue({
         createContact() {
             const {...contact} = this.form;
             console.log(contact);
-            this.contacts.push({name: this.form.name, value: this.form.value});
+            this.contacts.push({...contact, id: Date.now()});
 
             this.form.name = this.form.value = '';
-        }
+        },
+        markContact(id) { console.log(id); },
+        removeContact(id) {
+            this.contacts = this.contacts.filter(c => c.id !== id);
+            console.log(id);
+            },
     }
 });
