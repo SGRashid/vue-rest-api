@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <title>REST API</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<div class="container p-3" id="app">
+<div class="container p-3" id="app" v-cloak>
     <h1>Rest API</h1>
     <form class="form-inline mb-3" @submit.prevent="createContact">
         <div class="form-group mr-5">
