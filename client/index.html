@@ -22,7 +22,13 @@
             <label for="name" class="mr-3">Значение</label>
             <input type="text" class="form-control" id="value" v-model="form.value">
         </div>
-        <button class="btn btn-primary" type="submit" :disabled="!form.name || !form.value">Создать</button>
+        <button class="btn"
+                :class="{'btn-secondary': !canCreate, 'btn-primary': canCreate }"
+                :disabled="!canCreate"
+                type="submit"
+        >
+            Создать
+        </button>
     </form>
     <div v-if="contacts.length">
         <div class="card mb-3"
