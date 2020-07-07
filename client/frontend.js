@@ -8,21 +8,23 @@ new Vue({
                 name: '',
                 value: ''
             },
-            contacts: []
+            contacts: [
+                {id: 1, name: 'Сергей', value: '8-800-2000-600', marked: false}
+            ]
         }
     },
     methods: {
         createContact() {
             const {...contact} = this.form;
-            console.log(contact);
-            this.contacts.push({...contact, id: Date.now()});
-
+            this.contacts.push({...contact, id: Date.now(), marked: false});
             this.form.name = this.form.value = '';
         },
-        markContact(id) { console.log(id); },
+        markContact(id) {
+            const contact = this.contacts.find(c => c.id === id);
+            contact.marked = !contact.marked;
+        },
         removeContact(id) {
             this.contacts = this.contacts.filter(c => c.id !== id);
-            console.log(id);
-            },
+        },
     }
 });
