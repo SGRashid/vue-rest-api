@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "simple fullstack app",
   "main": "index.js",
-  "scripts":
-  {
+  "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -25,7 +24,8 @@
   },
   "homepage": "https://github.com/SGRashid/vue-rest-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
