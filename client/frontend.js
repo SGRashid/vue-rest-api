@@ -1,9 +1,21 @@
 import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.esm.browser.js';
 
+Vue.component('loader', {
+    template:
+        `
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="spinner-border text-danger" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        `
+});
+
 new Vue({
     el: '#app',
     data() {
         return {
+            loading: false,
             form: {
                 name: '',
                 value: ''
@@ -31,6 +43,11 @@ new Vue({
         removeContact(id) {
             this.contacts = this.contacts.filter(c => c.id !== id);
         },
+    },
+    async mounted() {
+        this.loading = true;
+        this.contacts = await request('/api/contacts');
+        this.loading = false;
     }
 
 });
