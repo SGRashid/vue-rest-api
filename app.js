@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+
+const CONTACTS = [
+    {id: 1, name: 'Сергей', value: '8-800-2000-600', marked: false},
+];
+
 app.use(express.static(path.resolve(__dirname, 'client')));
 
 app.get('*', (req, res) => {
