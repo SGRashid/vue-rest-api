@@ -24,7 +24,7 @@ app.post('/api/contacts', (req, res) => {
 // DELETE
 app.delete('/api/contacts/:id', (req, res) => {
     CONTACTS = CONTACTS.filter(c => c.id !== req.params.id);
-    res.status(200).json({message: 'Contact was deleted'});
+    res.status(200).json(req.body);
 });
 
 // PUT
