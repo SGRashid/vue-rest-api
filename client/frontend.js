@@ -39,8 +39,11 @@ new Vue({
         },
         async markContact(id) {
             this.loading = true;
-            await request('/api/contacts/' + id, 'PUT');
             const contact = this.contacts.find(c => c.id === id);
+            await request('/api/contacts/' + id, 'PUT', {
+                ...contact,
+                marked: !contact.marked
+            });
             contact.marked = !contact.marked;
             this.loading = false;
         },

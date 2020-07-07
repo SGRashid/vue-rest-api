@@ -29,7 +29,7 @@ app.delete('/api/contacts/:id', (req, res) => {
 
 // PUT
 app.put('/api/contacts/:id', (req, res) => {
-    CONTACTS = CONTACTS.map(c => c.id !== req.params.id ? c : Object.assign(c, { marked: !c.marked }));
+    CONTACTS = CONTACTS.map(c => c.id !== req.params.id ? c : req.body);
     res.status(200).json({message: 'Contact status was changed'});
 });
 
