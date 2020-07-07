@@ -22,12 +22,16 @@ app.post('/api/contacts', (req, res) => {
 });
 
 // DELETE
-app.delete('/api/contacts', (req, res) => {
-    console.log(req.body.id);
-    CONTACTS = CONTACTS.filter(c => c.id !== req.body.id);
-    res.json({id: req.body.id});
+app.delete('/api/contacts/:id', (req, res) => {
+    CONTACTS = CONTACTS.filter(c => c.id !== req.params.id);
+    res.status(200).json({message: 'Contact was deleted'});
 });
 
+// PUT
+app.put('/api/contacts/:id', (req, res) => {
+    CONTACTS = CONTACTS.map(c => c.id !== req.params.id ? c : Object.assign(c, { marked: !c.marked }));
+    res.status(200).json({message: 'Contact status was changed'});
+});
 
 app.use(express.static(path.resolve(__dirname, 'client')));
 
