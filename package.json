@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/SGRashid/vue-rest-api#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "uuid": "^8.2.0"
   },
   "devDependencies": {
